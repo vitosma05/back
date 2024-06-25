@@ -1,0 +1,61 @@
+@login = http://localhost:3000/user/login
+
+@singup = http://localhost:3000/user/usersp
+
+@getData = http://localhost:3000/user/getData
+
+@addMateria = http://localhost:3000/user/addMateria
+
+@cursar = http://localhost:3000/user/cursar
+
+@getMateriaById = http://localhost:3000/user/getMateriaById/123456789
+
+
+GET {{login}}
+Content-Type: application/json
+
+{
+    "dni": "123456789",
+    "password":"abcd"
+}
+
+###
+POST {{singup}}
+Content-Type: application/json
+
+{
+    "nombre": "vito",
+    "dni":"123456789",
+    "correro":"correof",
+    "password": "abcd"
+
+
+}
+
+###
+GET {{getData}}
+mani: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMzIzMjMyMzciLCJpYXQiOjE3MTY5MTU3ODMsImV4cCI6MTcxNjkxNTg0M30.K2W1tDWWW76ddGg8vllkyyzlu6QQuqPoz3Ti58lahj8
+
+
+###
+POST {{addMateria}}
+mani: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMzIzMjMyMzciLCJpYXQiOjE3MTY5MTg1MjQsImV4cCI6OTAwMDAwMDE3MTY5MTg1MzB9.pJksi_4P4kUpPjx_Pcw6a-KfIAYZ4PS35A-dIz9Gi-U
+Content-Type: application/json
+
+{
+    "nombre": "CristianTeria"
+}
+
+###
+POST {{cursar}}
+mani: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMzIzMjMyMzciLCJpYXQiOjE3MTY5MTg1MjQsImV4cCI6OTAwMDAwMDE3MTY5MTg1MzB9.pJksi_4P4kUpPjx_Pcw6a-KfIAYZ4PS35A-dIz9Gi-U
+Content-Type: application/json
+
+{
+  "dni": "123456789",
+  "idMateria": 8
+}
+
+### Obtener materias cursadas por un alumno (protegido por token)
+GET {{getMateriaById}}
+mani: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyMzIzMjMyMzciLCJpYXQiOjE3MTY5MTg1MjQsImV4cCI6OTAwMDAwMDE3MTY5MTg1MzB9.pJksi_4P4kUpPjx_Pcw6a-KfIAYZ4PS35A-dIz9Gi-U
